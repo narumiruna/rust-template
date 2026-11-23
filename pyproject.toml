@@ -1,0 +1,28 @@
+[project]
+name = "rust-cli-template"
+description = ""
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = []
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/narumiruna/rust-cli-template"
+
+[build-system]
+requires = ["maturin>=1.9,<2"]
+build-backend = "maturin"
+
+[tool.maturin]
+bindings = "bin"
+manifest-path = "Cargo.toml"
+strip = true
+
+[tool.uv]
+cache-keys = [
+  { file = "pyproject.toml" },
+  { file = "Cargo.toml" },
+  { file = "Cargo.lock" },
+  { file = "src/**/*.rs" },
+]
