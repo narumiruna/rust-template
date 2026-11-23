@@ -1,23 +1,20 @@
-# Repository instructions
+# Rust CLI template guidelines
 
-## Documentation
+## Commands
 
-- [UNREVIEWED] Read `docs/publishing.md` before changing release tooling, change notes, or release outputs.
-
-## Rex integration
-
-- Follow the connected Rex server's schema for request arguments, response fields, status meanings, and fallback behavior.
-- Before changing Rex integration, inspect the relevant schema with `rex --autostart=false api describe METHOD --json` or `rex --autostart=false block inspect -s SESSION BLOCK --json`.
-- For `program_status`:
-  - Map unrecognized `state` values to `idle`, as the schema requires; do not add an `Unknown` status.
-  - Treat an empty `records` array as no status report, not a reported `unknown` state.
-- Keep code, tests, fixtures, and documentation consistent with the verified schema; do not use repository-specific rules to override it.
+- From the repository root, run `cargo fmt --all -- --check`, `cargo clippy --locked --all-targets -- -D warnings`, and `cargo test --locked --all-targets` to match [CI](.github/workflows/ci.yml).
+- Run `prek run --all-files` to check repository hygiene and workflow security.
+- Run `uv lock --check` after changing Python package metadata.
 
 ## Boundaries
 
-- [UNREVIEWED] Run `changenote version`, `changenote tag`, tag pushes, GitHub Releases, or registry uploads only when the user explicitly requests that specific release action.
+- Run `changenote version` or `changenote tag`, trigger the release workflow, push tags, create GitHub Releases, or upload packages only when the user explicitly requests that action.
+
+## Testing
+
+- Test CLI behavior by running the built executable in integration tests under `tests/`.
 
 ## Git and commits
 
-- [UNREVIEWED] Before committing a release-relevant change, add or update a `brachio` note in `.changenote/` under the policy in `docs/publishing.md#change-notes` and validate it with `changenote status`.
-- [UNREVIEWED] For changes that need no release, create no note and state the reason in the completion report.
+- Before committing a release-relevant change, add or update a note in `.changenote/` for the package in [`.changenote/config.json`](.changenote/config.json) and verify it with `changenote status`.
+- Omit a change note when no release is needed and state the reason in the completion report.

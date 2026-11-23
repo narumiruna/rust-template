@@ -6,11 +6,10 @@
     "Cargo.toml",
     "Cargo.lock",
     "pyproject.toml",
-    "uv.lock",
-    ".github/workflows/release.yml"
+    "uv.lock"
   ],
   "packages": {
-    "brachio": {
+    "rust-cli-template": {
       "path": ".",
       "version_file": "Cargo.toml",
       "tag_prefix": "v"

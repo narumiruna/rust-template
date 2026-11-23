@@ -1,6 +1,6 @@
 [package]
 name = "rust-cli-template"
-version = "1.2.1"
+version = "0.0.0"
 edition = "2024"
 description = ""
 readme = "README.md"
