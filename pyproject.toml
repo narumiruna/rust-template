@@ -16,7 +16,7 @@ build-backend = "maturin"
 
 [tool.maturin]
 bindings = "bin"
-manifest-path = "Cargo.toml"
+manifest-path = "crates/cli/Cargo.toml"
 strip = true
 
 [tool.uv]
@@ -24,5 +24,6 @@ cache-keys = [
   { file = "pyproject.toml" },
   { file = "Cargo.toml" },
   { file = "Cargo.lock" },
+  { file = "crates/cli/Cargo.toml" },
   { file = "crates/cli/src/**/*.rs" },
 ]

@@ -1,6 +1,10 @@
 # rust-template
 
-The CLI source is in [`crates/cli/src/`](crates/cli/src/). Build or run it from the repository root with `cargo build` or `cargo run`.
+The root [`Cargo.toml`](Cargo.toml) defines a Cargo workspace with one member, [`crates/cli`](crates/cli/). The CLI package has its own [`Cargo.toml`](crates/cli/Cargo.toml), source in [`src/`](crates/cli/src/), and integration tests in [`tests/`](crates/cli/tests/).
+
+From the repository root, use `cargo build`, `cargo run`, or `cargo test`.
+
+Keep [`LICENSE`](LICENSE) and [`crates/cli/LICENSE`](crates/cli/LICENSE) in sync. The CLI package includes its own copy when built with `cargo package`.
 
 GitHub Actions checks formatting, runs Clippy, and runs tests on Linux for pull requests and pushes to `main`.
 
