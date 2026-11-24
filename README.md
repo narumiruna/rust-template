@@ -1,4 +1,4 @@
-# rust-cli-template
+# rust-template
 
 GitHub Actions checks formatting, runs Clippy, and runs tests on Linux for pull requests and pushes to `main`.
 

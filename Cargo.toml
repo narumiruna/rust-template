@@ -1,9 +1,9 @@
 [package]
-name = "rust-cli-template"
+name = "rust-template"
 version = "0.0.0"
 edition = "2024"
 description = ""
 readme = "README.md"
-repository = "https://github.com/narumiruna/rust-cli-template"
+repository = "https://github.com/narumiruna/rust-template"
 license = "MIT"
 publish = true
