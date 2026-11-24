@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/changenote/changenote/main/schema.json",
   "base_branch": "origin/main",
   "changed_file_patterns": [
-    "src/**",
+    "crates/cli/src/**",
     "Cargo.toml",
     "Cargo.lock",
     "pyproject.toml",
